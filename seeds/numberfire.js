@@ -11,7 +11,7 @@ var q = require('q');
 
 // Connect to Database
 
-// var db = mongoose.connection;
+var db = mongoose.connection;
 
 var wipeDB = function () {
 
@@ -20,8 +20,7 @@ var wipeDB = function () {
     return q.resolve();
 };
 
-var seed = function(data){
-	
+var seed = function(){
 	/* Associate Player Projections with Player based on id (jsonData.players) & player_id (jsonData.projections)*/
 	var projectionData = jsonData.projections;
 	var playersData = jsonData.players;
@@ -38,12 +37,20 @@ var seed = function(data){
 	for(var key in playersData){
 		var teamId = playersData[key].team_id
 		playersData[key].team = jsonData.teams[teamId].abbrev;
-	
+		playersData[key].isOutfield = 1;
+
 	/* Turn object of objects into array of objects for Mongo compatibility */
 		playerArray.push(playersData[key])
 	}
 
-	console.log(playerArray)
+/* FIGURE OUT isOutfield */
+
+	// if(playersData[key].depth_position = "LF" || playersData[key].depth_position = "CF" || playersData[key].depth_position = "RF"){
+		// 	playersData[key].isOutfield = 1;
+		// } else{
+		// 	playersData[key].isOutfield = 0;
+		// }
+	// console.log(playerArray)
 
 	/* Push Data to DB */
 	player.create(playerArray, function(err, data){

@@ -24,6 +24,9 @@ var playerSchema = new mongoose.Schema({
 		type: String,
 		ref: 'position'
 	},
+	position_group:{
+		type: Number
+	},
 	fanduel_fp:{
 		type: Number
 	},
@@ -31,6 +34,9 @@ var playerSchema = new mongoose.Schema({
 		type: Number
 	},
 	fanduel_ratio:{
+		type: Number
+	},	
+	isOutfield:{
 		type: Number
 	}
 });

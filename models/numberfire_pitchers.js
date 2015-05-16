@@ -24,6 +24,9 @@ var nfPitcherSchema = new mongoose.Schema({
 		type: String,
 		ref: 'position'
 	},
+	position_group:{
+		type: Number
+	},
 	fanduel_fp:{
 		type: Number
 	},
@@ -32,7 +35,7 @@ var nfPitcherSchema = new mongoose.Schema({
 	},
 	fanduel_ratio:{
 		type: Number
-	}
+	},
 });
 
 var nfPitcher = mongoose.model('nfPitcher', nfPitcherSchema)
