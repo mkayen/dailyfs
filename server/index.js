@@ -12,7 +12,8 @@ var app = express();
 /* Setting path to our index file. */
 
 var publicPath = path.join(__dirname, '../public');
-var cacheJSONPath = path.join(__dirname, '../cache/optLineup.html');
+var cacheJSONPath = path.join(__dirname, '../cache/optLineup.json');
+// var indexHtmlPath = path.join(__dirname, )
 
 // app.use(express.static())
 
