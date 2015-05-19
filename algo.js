@@ -6,7 +6,7 @@ var axios = require('axios');
 
 // 1B
 var firstBasePromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=1B&minPoints=2')
+axios.get('http://localhost:3000/api/hitters/search?depth_position=1B&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -14,7 +14,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=1B&minPoints=
 
 // 2B
 var secondBasePromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=2B&minPoints=2')
+axios.get('http://localhost:3000/api/hitters/search?depth_position=2B&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -22,7 +22,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=2B&minPoints=
 
 // SS
 var shortStopPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=SS&minPoints=2')
+axios.get('http://localhost:3000/api/hitters/search?depth_position=SS&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -30,7 +30,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=SS&minPoints=
 
 // 3B
 var thirdBasePromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=3B&minPoints=2')
+axios.get('http://localhost:3000/api/hitters/search?depth_position=3B&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -38,7 +38,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=3B&minPoints=
 
 // C
 var catcherPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=C&minPoints=2')
+axios.get('http://localhost:3000/api/hitters/search?depth_position=C&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -47,7 +47,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=C&minPoints=2
 // P
 
 var pitcherPromise =
-axios.get('http://localhost:3000/api/pitchers/search?minPoints=4')
+axios.get('http://localhost:3000/api/pitchers/search?minPoints=9')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -55,7 +55,7 @@ axios.get('http://localhost:3000/api/pitchers/search?minPoints=4')
 
 // LF
 var leftFieldPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=LF&minPoints=2')
+axios.get('http://localhost:3000/api/hitters/search?depth_position=LF&minPoints=3')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -63,7 +63,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=LF&minPoints=
 
 // CF
 var centerFieldPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=CF&minPoints=2')
+axios.get('http://localhost:3000/api/hitters/search?depth_position=CF&minPoints=3')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -71,7 +71,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=CF&minPoints=
 
 // RF
 var rightFieldPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=RFminPoints=2')
+axios.get('http://localhost:3000/api/hitters/search?depth_position=RFminPoints=3')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -103,8 +103,6 @@ q.all([firstBasePromise, secondBasePromise, shortStopPromise, thirdBasePromise, 
 				}
 			}
 		}
-
-		console.log(outFieldTrioArray[0])
 
 		// Lengths of Each Option
 
@@ -177,7 +175,6 @@ q.all([firstBasePromise, secondBasePromise, shortStopPromise, thirdBasePromise, 
 			}
 		}
 
-		console.log(thirdShortOF[0])
 		var thirdShortOFLen = thirdShortOF.length;
 
 		// Generate the Ultimate Lineup
@@ -211,21 +208,21 @@ q.all([firstBasePromise, secondBasePromise, shortStopPromise, thirdBasePromise, 
 
 		// Logs
 
-		console.log('P: ' + pitcherLength)
-		console.log('C: ' + catcherLength)
-		console.log('1B: ' + firstBaseLength)
-		console.log('2B: ' + secondBaseLength)
-		console.log('3B: ' + thirdBaseLength)
-		console.log('SS: ' + shortStopLength)
-		console.log('OF: ' + outFieldLength)
-		console.log('OF3: ' + outFieldTrioLength)
-		console.log('Possible Lineups:' + (pitcherLength * catcherLength * firstBaseLength * secondBaseLength * thirdBaseLength * shortStopLength * outFieldTrioLength))
-		console.log('Pitcher Catcher Pairs: ' + pitcherCatcher.length)
-		console.log('First Second Base Pairs: ' + firstSecond.length)
-		console.log('Third Short Pairs: ' + thirdShort.length)
-		console.log('Possible Lineups via Pairs: ' + pitcherCatcherFirstSecondLen * thirdShortOFLen)
-		console.log('First x Second x Pitch x Catch: ' + pitcherCatcherFirstSecondLen)
-		console.log('Third x Short x Outfield: ' + thirdShortOF.length)
+		// console.log('P: ' + pitcherLength)
+		// console.log('C: ' + catcherLength)
+		// console.log('1B: ' + firstBaseLength)
+		// console.log('2B: ' + secondBaseLength)
+		// console.log('3B: ' + thirdBaseLength)
+		// console.log('SS: ' + shortStopLength)
+		// console.log('OF: ' + outFieldLength)
+		// console.log('OF3: ' + outFieldTrioLength)
+		// console.log('Possible Lineups:' + (pitcherLength * catcherLength * firstBaseLength * secondBaseLength * thirdBaseLength * shortStopLength * outFieldTrioLength))
+		// console.log('Pitcher Catcher Pairs: ' + pitcherCatcher.length)
+		// console.log('First Second Base Pairs: ' + firstSecond.length)
+		// console.log('Third Short Pairs: ' + thirdShort.length)
+		// console.log('Possible Lineups via Pairs: ' + pitcherCatcherFirstSecondLen * thirdShortOFLen)
+		// console.log('First x Second x Pitch x Catch: ' + pitcherCatcherFirstSecondLen)
+		// console.log('Third x Short x Outfield: ' + thirdShortOF.length)
 
 		// Garbage Collection
 

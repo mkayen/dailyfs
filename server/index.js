@@ -4,14 +4,26 @@
 var express = require('express');
 var router = require('express').Router();
 var mongoose = require('mongoose');
+var path = require('path');
 var player = require('../models/players');
 var pitcher = require('../models/numberfire_pitchers');
 var app = express();
 
+/* Setting path to our index file. */
+
+var publicPath = path.join(__dirname, '../public');
+var cacheJSONPath = path.join(__dirname, '../cache/optLineup.html');
+
+// app.use(express.static())
+
+app.get('/lineup', function(req, res){
+	res.sendFile(cacheJSONPath)
+})
+
 /* Test */
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.sendFile(indexHtmlPath);
 });
 
 /* Dump of All Hitters API */
