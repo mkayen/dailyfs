@@ -9,20 +9,17 @@ var player = require('../models/numberfire_pitchers')
 var jsonData = require('../cache/numberfire_pitchers.json')
 var q = require('q')
 
-console.log('this file has been called')
 // Connect to Database
 
 var db = mongoose.connection
 
 var wipeDB = function () {
-	console.log('wipe has been called')
    	player.find({}).remove(function () {});
 
     return q.resolve();
 };
 
 var seed = function(){
-	console.log('is the seed running')
 	/* Associate Player Projections with Player based on id (jsonData.players) & player_id (jsonData.projections)*/
 	var projectionData = jsonData.projections;
 	var playersData = jsonData.players;

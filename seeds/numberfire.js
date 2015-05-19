@@ -36,21 +36,19 @@ var seed = function(){
 	var playerArray = [];
 	for(var key in playersData){
 		var teamId = playersData[key].team_id
+		var position = playersData[key].depth_position
 		playersData[key].team = jsonData.teams[teamId].abbrev;
-		playersData[key].isOutfield = 1;
+		// if(position = 'LF' || position = 'CF' || position = 'RF'){
+		// 	playersData[key][isOutfield] = 1;
+		// }else{
+		// 	playersData[key][isOutfield] = 0;
+		// };
 
 	/* Turn object of objects into array of objects for Mongo compatibility */
 		playerArray.push(playersData[key])
 	}
 
 /* FIGURE OUT isOutfield */
-
-	// if(playersData[key].depth_position = "LF" || playersData[key].depth_position = "CF" || playersData[key].depth_position = "RF"){
-		// 	playersData[key].isOutfield = 1;
-		// } else{
-		// 	playersData[key].isOutfield = 0;
-		// }
-	// console.log(playerArray)
 
 	/* Push Data to DB */
 	player.create(playerArray, function(err, data){
