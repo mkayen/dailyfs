@@ -6,7 +6,7 @@ var axios = require('axios');
 
 // 1B
 var firstBasePromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=1B&minPoints=2.5')
+axios.get('http://dailyfs.herokuapp.com/api/hitters/search?depth_position=1B&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -14,7 +14,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=1B&minPoints=
 
 // 2B
 var secondBasePromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=2B&minPoints=2.5')
+axios.get('http://http://dailyfs.herokuapp.com/api/hitters/search?depth_position=2B&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -22,7 +22,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=2B&minPoints=
 
 // SS
 var shortStopPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=SS&minPoints=2.5')
+axios.get('http://http://dailyfs.herokuapp.com/api/hitters/search?depth_position=SS&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -30,7 +30,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=SS&minPoints=
 
 // 3B
 var thirdBasePromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=3B&minPoints=2.5')
+axios.get('http://http://dailyfs.herokuapp.com/api/hitters/search?depth_position=3B&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -38,7 +38,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=3B&minPoints=
 
 // C
 var catcherPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=C&minPoints=2.5')
+axios.get('http://http://dailyfs.herokuapp.com/api/hitters/search?depth_position=C&minPoints=2.5')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -47,7 +47,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=C&minPoints=2
 // P
 
 var pitcherPromise =
-axios.get('http://localhost:3000/api/pitchers/search?minPoints=9')
+axios.get('http://http://dailyfs.herokuapp.com/api/pitchers/search?minPoints=9')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -55,7 +55,7 @@ axios.get('http://localhost:3000/api/pitchers/search?minPoints=9')
 
 // LF
 var leftFieldPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=LF&minPoints=3')
+axios.get('http://http://dailyfs.herokuapp.com/api/hitters/search?depth_position=LF&minPoints=3')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -63,7 +63,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=LF&minPoints=
 
 // CF
 var centerFieldPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=CF&minPoints=3')
+axios.get('http://http://dailyfs.herokuapp.com/api/hitters/search?depth_position=CF&minPoints=3')
 	.then(function(response){
 		// console.log(response)
 		return response.data
@@ -71,7 +71,7 @@ axios.get('http://localhost:3000/api/hitters/search?depth_position=CF&minPoints=
 
 // RF
 var rightFieldPromise = 
-axios.get('http://localhost:3000/api/hitters/search?depth_position=RFminPoints=3')
+axios.get('http://http://dailyfs.herokuapp.com/api/hitters/search?depth_position=RFminPoints=3')
 	.then(function(response){
 		// console.log(response)
 		return response.data

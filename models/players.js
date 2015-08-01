@@ -6,7 +6,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var DATABASE_URI = "mongodb://mkayen:Nov91990@ds031832.mongolab.com:31832/heroku_138rsq9k"
-var db = mongoose.connect(DATABASE_URI).connection;
+var mongooseUri = uriUtil.formatMongoose(DATABASE_URI)
+var db = mongoose.connect(mongooseUri).connection;
 
 var playerSchema = new mongoose.Schema({
 	id:{
