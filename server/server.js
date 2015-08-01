@@ -24,7 +24,7 @@ app.get('/lineup', function(req, res){
 /* Test */
 
 app.get('/', function (req, res) {
-  res.sendFile(indexHtmlPath);
+  res.send('test');
 });
 
 /* Dump of All Hitters API */
